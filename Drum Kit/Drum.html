@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drum Kit</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://fav.farm/✅"/>
 </head>
 <body>
     <div class="keys">
@@ -57,15 +58,24 @@
     <audio data-key="76" src="Hands_10_378.wav"></audio>
 
     <script>
-        window.addEventListener('keydown',function(e)
-        {
-            const audio = document.querySelector('audio[data-key="${e.keycode}"]');
-            if(!audio)
-            {
-                return;
-            }
-            audio.play();
-        });
-    </script>
+        function removeTransition(e) {
+          if (e.propertyName !== 'transform') return;
+          e.target.classList.remove('playing');
+        }
+      
+        function playSound(e) {
+          const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+          const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+          if (!audio) return;
+      
+          key.classList.add('playing');
+          audio.currentTime = 0;
+          audio.play();
+        }
+      
+        const keys = Array.from(document.querySelectorAll('.key'));
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+        window.addEventListener('keydown', playSound);
+      </script>
 </body>
 </html>
