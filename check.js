@@ -5,4 +5,4 @@ function outer() {
     }
     return inner;
 }
-console.log(inner());
+outer()();
