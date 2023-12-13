@@ -1,9 +1,5 @@
-function outer(b) {
-    var a = 10;
-    function inner() {
-        console.log(a,b);
-    }
-    return inner;
+var a=function xyz()
+{
+    console.log(a);
 }
-var close = outer("hello");
-close();
+a();
