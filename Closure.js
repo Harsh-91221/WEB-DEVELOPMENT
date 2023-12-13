@@ -1,11 +1,11 @@
 function x()
 {
     var a=5;
-    return function y()
+    function y()
     {
         console.log(a);
     }
-    y();
+    return y;
 }
 var z=x();
 console.log(z);
