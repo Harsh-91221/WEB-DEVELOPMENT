@@ -1,5 +1,8 @@
-for (var i = 0; i < 3; i++) {
-    (function (index) {
-        setTimeout(function () { console.log(index); }, 1000 * index);
-    })(i);
+function outer() {
+    var a = 10;
+    function inner() {
+        console.log(a);
+    }
+    return inner;
 }
+console.log(inner());
