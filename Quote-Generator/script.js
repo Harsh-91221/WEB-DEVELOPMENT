@@ -10,5 +10,5 @@ async function getQuote(url) {
 }
 getQuote(api_URL);
 function tweet() {
-    window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML + "---- by " + character.innerHTMLX, "Tweet Window", "width=600", "height=300");
+    window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML + "---- by " + character.innerHTML, "Tweet Window", "width=600", "height=300");
 }
