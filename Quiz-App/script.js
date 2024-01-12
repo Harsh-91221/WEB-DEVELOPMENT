@@ -1,10 +1,10 @@
 const questions = [
     {
-        question: "Name the song associated to the 3rd of December.",
+        question: "Name the song associated to GTA 6.",
         answers: [
             { text: "Here", correct: false },
             { text: "Lucid Dreams", correct: false },
-            { text: "Heather", correct: true },
+            { text: "Love Is A Long Road", correct: true },
             { text: "Monster", correct: false },
         ]
     },
